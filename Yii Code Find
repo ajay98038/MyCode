@@ -1,0 +1,10 @@
+1.ARRAY FIND ALL
+
+$options=$_POST['options'];
+                        
+                         $globalListOptions=SurveyGlobalList::model()->findAll(array('condition'=>'id IN (' . implode(',', $options). ')'));
+                         foreach($globalListOptions as $option)
+                        { 
+                         echo $option->option_name;
+                        }
+                        
